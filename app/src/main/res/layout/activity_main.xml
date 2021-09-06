@@ -7,22 +7,47 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/custo_do_servico"
-        android:layout_width="160dp"
+    <ImageView
+        android:id="@+id/icon_cost_of_service"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/custo_do_servi_o"
-        android:inputType="numberDecimal"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/custo_do_servico"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/custo_do_servico"
+        app:srcCompat="@drawable/ic_store" />
+<EditText
+    android:id="@+id/custo_do_servico"
+    android:layout_marginStart="30dp"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:hint="@string/custo_do_servi_o"
+    app:layout_constraintStart_toEndOf="@id/custo_do_servico"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:inputType="numberDecimal" />
 
+
+
+    <ImageView
+        android:id="@+id/icon_service_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/pergunta_sobre_servico"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pergunta_sobre_servico"
+        app:srcCompat="@drawable/ic_service" />
     <TextView
         android:id="@+id/pergunta_sobre_servico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/como_foi_o_servi_o"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/custo_do_servico" />
+        app:layout_constraintTop_toBottomOf="@id/custo_do_servico"
+        style="@style/Widget.TipTime.TextView"/>
 
     <RadioGroup
         android:id="@+id/opcoes"
@@ -30,7 +55,7 @@
         android:layout_height="wrap_content"
         android:checkedButton="@id/opcao_vinte_porcento"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/pergunta_sobre_servico"
         app:layout_constraintTop_toBottomOf="@id/pergunta_sobre_servico">
 
         <RadioButton
@@ -52,15 +77,27 @@
             android:text="@string/ok_15" />
     </RadioGroup>
 
-    <Switch
+    <ImageView
+        android:id="@+id/icon_round_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/arredondar_valor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/arredondar_valor"
+        app:srcCompat="@drawable/ic_round_up" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/arredondar_valor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:checked="true"
         android:text="@string/deseja_arredondar_o_valor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/opcoes" />
+        app:layout_constraintStart_toEndOf="@+id/icon_round_up"
+        app:layout_constraintTop_toBottomOf="@+id/opcoes"/>
+
+
 
     <Button
         android:id="@+id/botao_calcular"
@@ -68,15 +105,19 @@
         android:layout_height="wrap_content"
         android:text="@string/calcular"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/arredondar_valor" />
+        app:layout_constraintTop_toBottomOf="@id/arredondar_valor"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/arredondar_valor"/>
 
     <TextView
         android:id="@+id/resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/botao_calcular" />
+        app:layout_constraintTop_toBottomOf="@id/botao_calcular"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.TipTime.TextView"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
