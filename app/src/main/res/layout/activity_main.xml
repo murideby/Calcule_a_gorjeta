@@ -29,27 +29,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/pergunta_sobre_servico"
-        app:layout_constraindStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:orientation="vertical">
 
         <RadioButton
-        android:id="@+id/opcao_vinte_porcento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ótimo(20%)"/>
+            android:id="@+id/opcao_vinte_porcento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ótimo (20%)" />
 
         <RadioButton
-        android:id="@+id/opcao_dezoito_porcento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bom(18%)"/>
+            android:id="@+id/opcao_dezoito_porcento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bom (18%)" />
 
         <RadioButton
-        android:id="@+id/opcao_quinze_porcento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OK (15%)"/>
-
+            android:id="@+id/opcao_quinze_porcento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK (15%)" />
     </RadioGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
